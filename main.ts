@@ -14,7 +14,7 @@ input.onButtonPressed(Button.B, function () {
 let ONoff = false
 ONoff = false
 radio.setGroup(1)
-basic.forever(function () {
+loops.everyInterval(10, function () {
     if (ONoff == true && input.lightLevel() < 205) {
         radio.sendNumber(1)
         basic.showLeds(`
@@ -36,7 +36,8 @@ basic.forever(function () {
             `)
         basic.pause(2000)
         basic.clearScreen()
-    } else {
-    	
     }
+})
+basic.forever(function () {
+	
 })
