@@ -1,20 +1,20 @@
 input.onButtonPressed(Button.A, function () {
-    ONoff = 1
+    ONoff = true
     basic.showNumber(1)
     basic.pause(500)
     basic.clearScreen()
 })
 input.onButtonPressed(Button.B, function () {
-    ONoff = 0
+    ONoff = false
     basic.showNumber(0)
     basic.pause(500)
     basic.clearScreen()
 })
-let ONoff = 0
-ONoff = 0
+let ONoff = false
+ONoff = false
 radio.setGroup(1)
 basic.forever(function () {
-    if (ONoff == 1 && input.lightLevel() > 75) {
+    if (ONoff == true && input.lightLevel() > 75) {
         radio.sendNumber(1)
         basic.showLeds(`
             # . # . #
