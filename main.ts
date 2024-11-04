@@ -14,7 +14,7 @@ let ONoff = false
 ONoff = false
 radio.setGroup(1)
 basic.forever(function () {
-    if (ONoff == true && input.lightLevel() > 75) {
+    if (ONoff == true && input.lightLevel() < 205) {
         radio.sendNumber(1)
         basic.showLeds(`
             # . # . #
@@ -23,8 +23,16 @@ basic.forever(function () {
             . # . # .
             # . # . #
             `)
-        basic.pause(200)
+        basic.pause(5000)
         basic.clearScreen()
+    } else if (ONoff == true) {
+        basic.showLeds(`
+            # . . . .
+            # # . . .
+            # # # . .
+            # # # # .
+            # # # # #
+            `)
     } else {
     	
     }
