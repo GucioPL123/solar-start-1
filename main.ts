@@ -1,6 +1,7 @@
 input.onButtonPressed(Button.A, function () {
-    ONoff = true
     basic.showNumber(1)
+    basic.pause(400)
+    ONoff = true
     basic.pause(500)
     basic.clearScreen()
 })
@@ -23,7 +24,7 @@ basic.forever(function () {
             . # . # .
             # . # . #
             `)
-        basic.pause(5000)
+        basic.pause(3000)
         basic.clearScreen()
     } else if (ONoff == true) {
         basic.showLeds(`
@@ -33,6 +34,8 @@ basic.forever(function () {
             # # # # .
             # # # # #
             `)
+        basic.pause(2000)
+        basic.clearScreen()
     } else {
     	
     }
